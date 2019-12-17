@@ -1,3 +1,7 @@
 <?
-define('ADMIN_MODULE_NAME', 'redsign.daysarticle2');
+/**
+ * Copyright (c) 18/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+define('ADMIN_MODULE_NAME', 'collected.daysarticle2');
 define('ADMIN_MODULE_ICON', '');

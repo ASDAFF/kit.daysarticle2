@@ -116,5 +116,3 @@
 		});
 	</script>
 <?endforeach;?>
-
-<div style="display:none;">AlfaSystems daysarticle2 da2 AS09BTR</div>

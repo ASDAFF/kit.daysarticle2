@@ -47,6 +47,23 @@
 			</div>
 			<div class="da2-clear"></div>
 		</div>
+		<div class="da2-title1"><?=GetMessage("DA2_TITLE")?></div>
+		<div class="da2-centerblock">
+			<div class="da2-leblo">
+				<div class="da2-super_price"><?=GetMessage("DA2_SUPER_PRICE")?>: <span class="da2-super_price-price"><?=$arItem["DAYSARTICLE2"]["PRICE"]?></span></div>
+				<div class="da2-price_and_discount">
+					<div class="da2-price_and_discount-lp"><?=GetMessage("DA2_PRICE")?>: <span class="da2-price"><?=$arItem["DAYSARTICLE2"]["OLD_PRICE"]?></span></div>
+					<div class="da2-price_and_discount-rp">
+						<?=GetMessage("DA2_ECONOMY")?><br />
+						<span class="da2-economy">- <?=$arItem["DAYSARTICLE2"]["DISCOUNT"]?></span>
+					</div>
+				</div>
+			</div>
+			<a class="da-buy_link" href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+				<img src="<?=$templateFolder."/img/btn_buy.png"?>" border="0" alt="<?=GetMessage("DA2_ADD2BASKET")?>" title="<?=GetMessage("DA2_ADD2BASKET")?>" />
+			</a>
+			<div class="da2-already_selled"><?=GetMessage("DA2_ALREADY_SELLED")?> <span class="da2-persent-full"><span class="da2-persent-only"><?=$arItem["DAYSARTICLE2"]["DINAMICA_EX"]["PHP_DATA"]["persent"]?></span>%</span></div>
+		</div>
 		<div class="da2-clear"></div>
 		<div class="da2-bottomblock">
 			<div class="da2-progress_bar">
@@ -58,26 +75,6 @@
 					<span class="da2-js-s"><?=$arItem["DAYSARTICLE2"]["DINAMICA_EX"]["SECOND2"]?></span> <?=GetMessage("DA2_TIME_SEC")?>
 				</div>
 			</div>
-		</div>
-		<div class="da2-clear"></div>
-		<div class="da2-title1"><?=GetMessage("DA2_TITLE")?></div>
-		<div class="da2-already_selled"><?=GetMessage("DA2_ALREADY_SELLED")?> <span class="da2-persent-full"><span class="da2-persent-only"><?=$arItem["DAYSARTICLE2"]["DINAMICA_EX"]["PHP_DATA"]["persent"]?></span>%</span></div>
-		<div class="da2-clear"></div>
-		<div class="da2-centerblock">
-			<div class="da2-leblo">
-				<div class="da2-price_and_discount">
-					<div class="da2-price_and_discount-lp"><?=GetMessage("DA2_PRICE")?>: <span class="da2-price"><?=$arItem["DAYSARTICLE2"]["OLD_PRICE"]?></span></div>
-					<div class="da2-price_and_discount-rp">
-						<?=GetMessage("DA2_ECONOMY")?><br />
-						<span class="da2-economy">- <?=$arItem["DAYSARTICLE2"]["DISCOUNT"]?></span>
-					</div>
-				</div>
-				<div class="da2-clear"></div>
-				<div class="da2-super_price"><?=GetMessage("DA2_SUPER_PRICE")?>: <span class="da2-super_price-price"><?=$arItem["DAYSARTICLE2"]["PRICE"]?></span></div>
-			</div>
-			<a class="da-buy_link" href="<?=$arItem["DETAIL_PAGE_URL"]?>">
-				<img src="<?=$templateFolder."/img/btn_buy.png"?>" border="0" alt="<?=GetMessage("DA2_ADD2BASKET")?>" title="<?=GetMessage("DA2_ADD2BASKET")?>" />
-			</a>
 		</div>
 		<div class="da2-clear"></div>
 	</div>
@@ -113,5 +110,3 @@
 		});
 	</script>
 <?endforeach;?>
-
-<div style="display:none;">AlfaSystems daysarticle2 da2 AS09BTR</div>

@@ -1,9 +1,13 @@
 <?
+/**
+ * Copyright (c) 18/12/2019 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 global $DBType, $DB, $MESS, $APPLICATION;
 IncludeModuleLangFile(__FILE__);
 
 CModule::AddAutoloadClasses(
-	'redsign.daysarticle2',
+	'collected.daysarticle2',
 	array(
 		'CRSDA2Tab' => 'classes/general/tab.php',
 		'CRSDA2Main' => 'classes/general/main.php',

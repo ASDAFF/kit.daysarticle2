@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS b_redsign_daysarticle2_two
+CREATE TABLE IF NOT EXISTS b_collected_daysarticle2_two
 (
 	ID int(11) NOT NULL AUTO_INCREMENT,
 	ELEMENT_ID varchar(255) NULL,

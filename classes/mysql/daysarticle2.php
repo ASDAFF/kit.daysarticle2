@@ -10,7 +10,7 @@ IncludeModuleLangFile(__FILE__);
 
 class CRSDA2Elements extends CRSDA2Main
 {
-	protected static $tableName = 'b_redsign_daysarticle2_two';
+	protected static $tableName = 'b_collected_daysarticle2_two';
 	
 	function GetList($aSort=array(), $aFilter=array())
 	{

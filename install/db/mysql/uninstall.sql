@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS b_redsign_daysarticle2_two;
+DROP TABLE IF EXISTS b_collected_daysarticle2_two;

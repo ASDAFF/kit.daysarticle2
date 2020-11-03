@@ -17,38 +17,38 @@ class CRSDA2Main
 		
 		if(CRSDA2Tab::NeedAddTab()) {
 			$VALUE_TYPE = 'F';
-			$VALUE_TYPE = ($_REQUEST['collected_daysarticle2_discount_type']=='P'?'P':$VALUE_TYPE);
-			$VALUE_TYPE = ($_REQUEST['collected_daysarticle2_discount_type']=='S'?'S':$VALUE_TYPE);
-			$daysarticle2_id = IntVal($_REQUEST['collected_daysarticle2_id']);
+			$VALUE_TYPE = ($_REQUEST['kit_daysarticle2_discount_type']=='P'?'P':$VALUE_TYPE);
+			$VALUE_TYPE = ($_REQUEST['kit_daysarticle2_discount_type']=='S'?'S':$VALUE_TYPE);
+			$daysarticle2_id = IntVal($_REQUEST['kit_daysarticle2_id']);
 			
-			if(is_array($_REQUEST['collected_daysarticle2_dinamics_custom_percent']) && count($_REQUEST['collected_daysarticle2_dinamics_custom_percent'])>0) {
+			if(is_array($_REQUEST['kit_daysarticle2_dinamics_custom_percent']) && count($_REQUEST['kit_daysarticle2_dinamics_custom_percent'])>0) {
 				$arDinamicDataTogether = array();
-				foreach($_REQUEST['collected_daysarticle2_dinamics_custom_percent'] as $k => $v) {
-					if(IntVal($v)>0 && (IntVal($_REQUEST['collected_daysarticle2_dinamics_custom_time'][$k])>0 || $_REQUEST['collected_daysarticle2_dinamics_custom_time'][$k]=='*')) {
-						$arDinamicDataTogether[$_REQUEST['collected_daysarticle2_dinamics_custom_percent'][$k]] = $_REQUEST['collected_daysarticle2_dinamics_custom_time'][$k];
+				foreach($_REQUEST['kit_daysarticle2_dinamics_custom_percent'] as $k => $v) {
+					if(IntVal($v)>0 && (IntVal($_REQUEST['kit_daysarticle2_dinamics_custom_time'][$k])>0 || $_REQUEST['kit_daysarticle2_dinamics_custom_time'][$k]=='*')) {
+						$arDinamicDataTogether[$_REQUEST['kit_daysarticle2_dinamics_custom_percent'][$k]] = $_REQUEST['kit_daysarticle2_dinamics_custom_time'][$k];
 					}
 				}
 				asort($arDinamicDataTogether);
 			}
 			$arFields = array(
-				'ELEMENT_ID' => IntVal($_REQUEST['collected_daysarticle2_element_id']),
+				'ELEMENT_ID' => IntVal($_REQUEST['kit_daysarticle2_element_id']),
 				'ACTIVE' => 'Y',
-				'DATE_FROM' => $_REQUEST['collected_daysarticle2_date_from'],
-				'DATE_TO' => $_REQUEST['collected_daysarticle2_date_to'],
-				'DISCOUNT' => IntVal($_REQUEST['collected_daysarticle2_discount']),
+				'DATE_FROM' => $_REQUEST['kit_daysarticle2_date_from'],
+				'DATE_TO' => $_REQUEST['kit_daysarticle2_date_to'],
+				'DISCOUNT' => IntVal($_REQUEST['kit_daysarticle2_discount']),
 				'VALUE_TYPE' => $VALUE_TYPE,
-				'CURRENCY' => htmlspecialchars($_REQUEST['collected_quickbuy_currency']),
-				'QUANTITY' => IntVal($_REQUEST['collected_daysarticle2_quantity']),
-				'AUTO_RENEWAL' => ($_REQUEST['collected_daysarticle2_auto_renewal']=='Y' ? 'Y' : 'N'),
-				'DINAMICA' => ($_REQUEST['collected_daysarticle2_dinamic']=='evenly' ? 'evenly' : 'custom'),
+				'CURRENCY' => htmlspecialchars($_REQUEST['kit_quickbuy_currency']),
+				'QUANTITY' => IntVal($_REQUEST['kit_daysarticle2_quantity']),
+				'AUTO_RENEWAL' => ($_REQUEST['kit_daysarticle2_auto_renewal']=='Y' ? 'Y' : 'N'),
+				'DINAMICA' => ($_REQUEST['kit_daysarticle2_dinamic']=='evenly' ? 'evenly' : 'custom'),
 				'DINAMICA_DATA' => serialize($arDinamicDataTogether),
 			);
 			
-			if($daysarticle2_id>0 && $_REQUEST['collected_daysarticle2_active']=='Y') {
+			if($daysarticle2_id>0 && $_REQUEST['kit_daysarticle2_active']=='Y') {
 				CRSDA2Elements::Update($daysarticle2_id, $arFields);
-			} elseif($daysarticle2_id<1 && $_REQUEST['collected_daysarticle2_active']=='Y') {
+			} elseif($daysarticle2_id<1 && $_REQUEST['kit_daysarticle2_active']=='Y') {
 				CRSDA2Elements::Add($arFields);
-			} elseif($daysarticle2_id>0 && $_REQUEST['collected_daysarticle2_active']!='Y') {
+			} elseif($daysarticle2_id>0 && $_REQUEST['kit_daysarticle2_active']!='Y') {
 				CRSDA2Elements::Delete($daysarticle2_id);
 			}
 		}

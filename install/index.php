@@ -2,9 +2,9 @@
 global $MESS;
 IncludeModuleLangFile(__FILE__);
 
-Class collected_daysarticle2 extends CModule
+Class kit_daysarticle2 extends CModule
 {
-    var $MODULE_ID = 'collected.daysarticle2';
+    var $MODULE_ID = 'kit.daysarticle2';
 	var $MODULE_VERSION;
 	var $MODULE_VERSION_DATE;
 	var $MODULE_NAME;
@@ -12,7 +12,7 @@ Class collected_daysarticle2 extends CModule
 	var $MODULE_CSS;
 	var $MODULE_GROUP_RIGHTS = 'Y';
 
-	function collected_daysarticle2()
+	function kit_daysarticle2()
 	{
 		$arModuleVersion = array();
 
@@ -38,16 +38,16 @@ Class collected_daysarticle2 extends CModule
 	function InstallDB()
 	{
 		global $DB, $DBType, $APPLICATION;
-		RegisterModule('collected.daysarticle2');
-		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/collected.daysarticle2/install/db/'.$DBType.'/install.sql');
+		RegisterModule('kit.daysarticle2');
+		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/kit.daysarticle2/install/db/'.$DBType.'/install.sql');
 		return TRUE;
 	}
 
 	function InstallEvents()
 	{
-		RegisterModuleDependences('main', 'OnAdminTabControlBegin', 'collected.daysarticle2', 'CRSDA2Tab', 'MyOnAdminTabControlBegin');
-		RegisterModuleDependences('main', 'OnBeforeProlog', 'collected.daysarticle2', 'CRSDA2Main', 'OnBeforePrologElementUpdate');
-		RegisterModuleDependences('sale', 'OnSaleComponentOrderOneStepComplete', 'collected.daysarticle2', 'CRSDA2Main', 'OnSaleComponentOrderOneStepComplete');
+		RegisterModuleDependences('main', 'OnAdminTabControlBegin', 'kit.daysarticle2', 'CRSDA2Tab', 'MyOnAdminTabControlBegin');
+		RegisterModuleDependences('main', 'OnBeforeProlog', 'kit.daysarticle2', 'CRSDA2Main', 'OnBeforePrologElementUpdate');
+		RegisterModuleDependences('sale', 'OnSaleComponentOrderOneStepComplete', 'kit.daysarticle2', 'CRSDA2Main', 'OnSaleComponentOrderOneStepComplete');
 		return TRUE;
 	}
 
@@ -58,7 +58,7 @@ Class collected_daysarticle2 extends CModule
 
 	function InstallFiles()
 	{
-		CopyDirFiles($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/collected.daysarticle2/install/copyfiles/components', $_SERVER['DOCUMENT_ROOT'].'/bitrix/components', true, true);
+		CopyDirFiles($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/kit.daysarticle2/install/copyfiles/components', $_SERVER['DOCUMENT_ROOT'].'/bitrix/components', true, true);
 		return TRUE;
 	}
 
@@ -71,22 +71,22 @@ Class collected_daysarticle2 extends CModule
 	function UnInstallDB($arParams = Array())
 	{
 		global $DB, $DBType, $APPLICATION;
-		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/collected.daysarticle2/install/db/'.$DBType.'/uninstall.sql');
-		UnRegisterModule('collected.daysarticle2');
+		$DB->RunSQLBatch($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/kit.daysarticle2/install/db/'.$DBType.'/uninstall.sql');
+		UnRegisterModule('kit.daysarticle2');
 		return TRUE;
 	}
 
 	function UnInstallEvents()
 	{
-		UnRegisterModuleDependences('main', 'OnAdminTabControlBegin', 'collected.daysarticle2', 'CRSDA2Tab', 'MyOnAdminTabControlBegin');
-		UnRegisterModuleDependences('main', 'OnBeforeProlog', 'collected.daysarticle2', 'CRSDA2Main', 'OnBeforePrologElementUpdate');
-		UnRegisterModuleDependences('sale', 'OnSaleComponentOrderOneStepComplete', 'collected.daysarticle2', 'CRSDA2Main', 'OnSaleComponentOrderOneStepComplete');
+		UnRegisterModuleDependences('main', 'OnAdminTabControlBegin', 'kit.daysarticle2', 'CRSDA2Tab', 'MyOnAdminTabControlBegin');
+		UnRegisterModuleDependences('main', 'OnBeforeProlog', 'kit.daysarticle2', 'CRSDA2Main', 'OnBeforePrologElementUpdate');
+		UnRegisterModuleDependences('sale', 'OnSaleComponentOrderOneStepComplete', 'kit.daysarticle2', 'CRSDA2Main', 'OnSaleComponentOrderOneStepComplete');
 		return TRUE;
 	}
 
 	function UnInstallOptions()
 	{
-		COption::RemoveOption('collected.daysarticle2');
+		COption::RemoveOption('kit.daysarticle2');
 		return TRUE;
 	}
 
@@ -108,7 +108,7 @@ Class collected_daysarticle2 extends CModule
 		$keyGoodOptions = $this->InstallOptions();
 		$keyGoodFiles = $this->InstallFiles();
 		$keyGoodPublic = $this->InstallPublic();
-		$APPLICATION->IncludeAdminFile(GetMessage('SPER_INSTALL_TITLE'), $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/collected.daysarticle2/install/install.php');
+		$APPLICATION->IncludeAdminFile(GetMessage('SPER_INSTALL_TITLE'), $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/kit.daysarticle2/install/install.php');
     }
 
     function DoUninstall()
@@ -119,7 +119,7 @@ Class collected_daysarticle2 extends CModule
 		$keyGoodOptions = $this->UnInstallOptions();
 		$keyGoodDB = $this->UnInstallDB();
 		$keyGoodPublic = $this->UnInstallPublic();
-		$APPLICATION->IncludeAdminFile(GetMessage('SPER_UNINSTALL_TITLE'), $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/collected.daysarticle2/install/uninstall.php');
+		$APPLICATION->IncludeAdminFile(GetMessage('SPER_UNINSTALL_TITLE'), $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/kit.daysarticle2/install/uninstall.php');
     }
 }
 ?>

@@ -10,7 +10,7 @@ if(!CModule::IncludeModule('catalog'))
 	ShowError( GetMessage('ERROR_NOT_MODULE_CATALOG') );
 	return;
 }
-if(!CModule::IncludeModule('collected.daysarticle2'))
+if(!CModule::IncludeModule('kit.daysarticle2'))
 {
 	ShowError( GetMessage('ERROR_EMPTY_MODULE_DA2') );
 	return;
@@ -39,7 +39,7 @@ elseif('N' == $arParams['CONVERT_CURRENCY'])
 	$arParams['CURRENCY_ID'] = '';
 }
 
-$init_jquery = COption::GetOptionString('collected.daysarticle2', 'init_jquery', 'N');
+$init_jquery = COption::GetOptionString('kit.daysarticle2', 'init_jquery', 'N');
 if($init_jquery=='Y')
 	CJSCore::Init('jquery');
 

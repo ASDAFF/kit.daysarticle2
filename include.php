@@ -7,7 +7,7 @@ global $DBType, $DB, $MESS, $APPLICATION;
 IncludeModuleLangFile(__FILE__);
 
 CModule::AddAutoloadClasses(
-	'collected.daysarticle2',
+	'kit.daysarticle2',
 	array(
 		'CRSDA2Tab' => 'classes/general/tab.php',
 		'CRSDA2Main' => 'classes/general/main.php',

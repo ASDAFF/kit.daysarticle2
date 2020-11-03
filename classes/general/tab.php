@@ -26,44 +26,44 @@ ob_start();
 ?><script>
 function AddCutomDinamic()
 {
-	var index = document.getElementById('collected_daysarticle2_counter').value;
-	var list = document.getElementById('collected_daysarticle2_dinamics_custom');
+	var index = document.getElementById('kit_daysarticle2_counter').value;
+	var list = document.getElementById('kit_daysarticle2_dinamics_custom');
 	var li = document.createElement('LI');
-	li.innerHTML = '<input type="text" name="collected_daysarticle2_dinamics_custom_percent['+index+']" value="" /> &nbsp; ' +
-						'<input type="text" name="collected_daysarticle2_dinamics_custom_time['+index+']" value="" />';
+	li.innerHTML = '<input type="text" name="kit_daysarticle2_dinamics_custom_percent['+index+']" value="" /> &nbsp; ' +
+						'<input type="text" name="kit_daysarticle2_dinamics_custom_time['+index+']" value="" />';
 	list.appendChild(li);
-	document.getElementById('collected_daysarticle2_counter').value = (parseInt(index)+1);
+	document.getElementById('kit_daysarticle2_counter').value = (parseInt(index)+1);
 	return false;
 }
 function SwitchDinamicaType(val)
 {
 	if(val=="evenly")
 	{
-		document.getElementById('collected_daysarticle2_dinamics_custom').style.display = "none";
+		document.getElementById('kit_daysarticle2_dinamics_custom').style.display = "none";
 	} else {
-		document.getElementById('collected_daysarticle2_dinamics_custom').style.display = "block";
+		document.getElementById('kit_daysarticle2_dinamics_custom').style.display = "block";
 	}
 }
 </script><?
-?><input type="hidden" name="collected_daysarticle2_id" value="<?=$data["ID"]?>" /><?
-?><input type="hidden" name="collected_daysarticle2_element_id" value="<?=$ELEMENT_ID?>" /><?
+?><input type="hidden" name="kit_daysarticle2_id" value="<?=$data["ID"]?>" /><?
+?><input type="hidden" name="kit_daysarticle2_element_id" value="<?=$ELEMENT_ID?>" /><?
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><?=GetMessage("RSDA2.ACTIVE")?></td><?
-	?><td width="50%" class="adm-detail-content-cell-r"><input type="checkbox" name="collected_daysarticle2_active" value="Y"<?if($data["ID"]>0):?> checked="checked"<?endif;?> /></td><?
+	?><td width="50%" class="adm-detail-content-cell-r"><input type="checkbox" name="kit_daysarticle2_active" value="Y"<?if($data["ID"]>0):?> checked="checked"<?endif;?> /></td><?
 ?></tr><?
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><span class="adm-required-field"><?=GetMessage("RSDA2.DATE_FROM")?></span></td><?
-	?><td width="50%" class="adm-detail-content-cell-r"><?=CAdminCalendar::CalendarDate("collected_daysarticle2_date_from", $data["DATE_FROM"], 10, true)?></td><?
+	?><td width="50%" class="adm-detail-content-cell-r"><?=CAdminCalendar::CalendarDate("kit_daysarticle2_date_from", $data["DATE_FROM"], 10, true)?></td><?
 ?></tr><?
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><span class="adm-required-field"><?=GetMessage("RSDA2.DATE_TO")?></span></td><?
-	?><td width="50%" class="adm-detail-content-cell-r"><?=CAdminCalendar::CalendarDate("collected_daysarticle2_date_to", $data["DATE_TO"], 10, true)?></td><?
+	?><td width="50%" class="adm-detail-content-cell-r"><?=CAdminCalendar::CalendarDate("kit_daysarticle2_date_to", $data["DATE_TO"], 10, true)?></td><?
 ?></tr><?
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><span class="adm-required-field"><?=GetMessage("RSDA2.DISCOUNT")?></span></td><?
 	?><td width="50%" class="adm-detail-content-cell-r"><?
-		?><input type="text" name="collected_daysarticle2_discount" value="<?=$data['DISCOUNT']?>" /><?
-		?><select name="collected_daysarticle2_discount_type"><?
+		?><input type="text" name="kit_daysarticle2_discount" value="<?=$data['DISCOUNT']?>" /><?
+		?><select name="kit_daysarticle2_discount_type"><?
 			?><option value="P"<?if($data['VALUE_TYPE']=='P'):?> selected <?endif;?>><?=GetMessage('RSDA2.VALUE_TYPE_P')?></option><?
 			?><option value="F"<?if($data['VALUE_TYPE']=='F' || IntVal($data['ID'])<1):?> selected <?endif;?>><?=GetMessage('RSDA2.VALUE_TYPE_F')?></option><?
 			?><option value="S"<?if($data['VALUE_TYPE']=='S'):?> selected <?endif;?>><?=GetMessage('RSDA2.VALUE_TYPE_S')?></option><?
@@ -73,7 +73,7 @@ function SwitchDinamicaType(val)
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><span class="adm-required-field"><?=GetMessage('RSDA2.CURRENCY')?></span></span></td><?
 	?><td width="50%" class="adm-detail-content-cell-r"><?
-		?><select name="collected_daysarticle2_currency"><?
+		?><select name="kit_daysarticle2_currency"><?
 			foreach($arCurrencyList as $key => $val)
 			{
 				?><option value="<?=$key?>"<?if($data['CURRENCY']==$key):?> selected <?endif;?>><?=$val?></option><?
@@ -85,7 +85,7 @@ $bitrix_default_quantity_trace = COption::GetOptionString('catalog', 'default_qu
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><?=GetMessage("RSDA2.QUANTITY")?></td><?
 	?><td width="50%" class="adm-detail-content-cell-r"><?
-		?><input type="text" name="collected_daysarticle2_quantity" value="<?=$data['QUANTITY']?>" <?if($bitrix_default_quantity_trace=='N'):?>disabled <?endif;?>/><?
+		?><input type="text" name="kit_daysarticle2_quantity" value="<?=$data['QUANTITY']?>" <?if($bitrix_default_quantity_trace=='N'):?>disabled <?endif;?>/><?
 		if($bitrix_default_quantity_trace=='N')
 		{
 			?>&nbsp;<?=GetMessage('RSDA2.QUANTITY_NOTE_0')?><?
@@ -94,7 +94,7 @@ $bitrix_default_quantity_trace = COption::GetOptionString('catalog', 'default_qu
 ?></tr><?
 ?><tr><?
 	?><td width="50%" class="adm-detail-content-cell-l"><?=GetMessage("RSDA2.AUTO_RENEWAL")?></td><?
-	?><td width="50%" class="adm-detail-content-cell-r"><input type="checkbox" name="collected_daysarticle2_auto_renewal" value="Y"<?if($data["AUTO_RENEWAL"]=="Y"):?> checked="checked"<?endif;?> /></td><?
+	?><td width="50%" class="adm-detail-content-cell-r"><input type="checkbox" name="kit_daysarticle2_auto_renewal" value="Y"<?if($data["AUTO_RENEWAL"]=="Y"):?> checked="checked"<?endif;?> /></td><?
 ?></tr><?
 ?><tr class="heading"><?
 	?><td colspan="2"><?=GetMessage("RSDA2.HEAD_DINAMIC")?></td><?
@@ -103,11 +103,11 @@ $bitrix_default_quantity_trace = COption::GetOptionString('catalog', 'default_qu
 	?><td colspan="2"><?
 		?><!-- dinamics --><?
 		$data["DINAMICA"]=="custom" ? $dinamica = "custom" : $dinamica = "evenly";
-		?><label><input type="radio" name="collected_daysarticle2_dinamic" value="evenly"<?if($dinamica=="evenly"):?> checked="checked"<?endif;?> onclick="SwitchDinamicaType(this.value);" /><?
+		?><label><input type="radio" name="kit_daysarticle2_dinamic" value="evenly"<?if($dinamica=="evenly"):?> checked="checked"<?endif;?> onclick="SwitchDinamicaType(this.value);" /><?
 			?><?=GetMessage("RSDA2.DINAMIC_EVENLY")?></label><br /><?
-		?><label><input type="radio" name="collected_daysarticle2_dinamic" value="custom"<?if($dinamica=="custom"):?> checked="checked"<?endif;?> onclick="SwitchDinamicaType(this.value);" /><?
+		?><label><input type="radio" name="kit_daysarticle2_dinamic" value="custom"<?if($dinamica=="custom"):?> checked="checked"<?endif;?> onclick="SwitchDinamicaType(this.value);" /><?
 			?><?=GetMessage("RSDA2.DINAMIC_CUSTOM")?></label><br /><?
-		?><ul id="collected_daysarticle2_dinamics_custom" style="display:<?if($dinamica=="custom"):?>block<?else:?>none<?endif;?>;"><?
+		?><ul id="kit_daysarticle2_dinamics_custom" style="display:<?if($dinamica=="custom"):?>block<?else:?>none<?endif;?>;"><?
 			?><li><?
 				?><?=GetMessage("RSDA2.DINAMIC_CUSTOM_PERSENT")?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?
 				?> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?
@@ -120,8 +120,8 @@ $bitrix_default_quantity_trace = COption::GetOptionString('catalog', 'default_qu
 				if($persent!="" && $time!="")
 				{
 					?><li><?
-						?><input type="text" name="collected_daysarticle2_dinamics_custom_percent[<?=$key?>]" value="<?=$persent?>" /> &nbsp;<?
-						?><input type="text" name="collected_daysarticle2_dinamics_custom_time[<?=$key?>]" value="<?=$time?>" /><?
+						?><input type="text" name="kit_daysarticle2_dinamics_custom_percent[<?=$key?>]" value="<?=$persent?>" /> &nbsp;<?
+						?><input type="text" name="kit_daysarticle2_dinamics_custom_time[<?=$key?>]" value="<?=$time?>" /><?
 					?></li><?
 				}
 				$key++;
@@ -129,12 +129,12 @@ $bitrix_default_quantity_trace = COption::GetOptionString('catalog', 'default_qu
 			for($i=($key+1);$i<($key+6);$i++)
 			{
 				?><li><?
-					?><input type="text" name="collected_daysarticle2_dinamics_custom_percent[<?=$i?>]" value="" /> &nbsp;<?
-					?><input type="text" name="collected_daysarticle2_dinamics_custom_time[<?=$i?>]" value="" /><?
+					?><input type="text" name="kit_daysarticle2_dinamics_custom_percent[<?=$i?>]" value="" /> &nbsp;<?
+					?><input type="text" name="kit_daysarticle2_dinamics_custom_time[<?=$i?>]" value="" /><?
 				?></li><?
 			}
 		?></ul><?
-		?><input type="hidden" name="collected_daysarticle2_counter" id="collected_daysarticle2_counter" value="<?=($key+6)?>" /><?
+		?><input type="hidden" name="kit_daysarticle2_counter" id="kit_daysarticle2_counter" value="<?=($key+6)?>" /><?
 		?><!-- /dinamics --><?
 	?></td><?
 ?></tr><?
@@ -142,7 +142,7 @@ $context = ob_get_contents();
 ob_end_clean();
 
 			$form->tabs[] = array(
-				'DIV' => 'collected_daysarticle2_edit_element',
+				'DIV' => 'kit_daysarticle2_edit_element',
 				'TAB' => GetMessage('RSDA2.TAB_NAME'),
 				'ICON' => 'main_user_edit',
 				'TITLE' => GetMessage('RSDA2.TAB_TITLE'),
